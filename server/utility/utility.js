@@ -5,7 +5,11 @@ function encryptPassword(password, hash) {
   const hashedPassword = bcrypt.hash(password, hash);
   return hashedPassword;
 }
-
+//compare Password
+function decryptPassword(password, dbPassword) {
+  const comparePassword = bcrypt.compare(password, dbPassword);
+  return comparePassword;
+}
 // Cout String Lenght
 const string_length = function (string) {
   if (
@@ -22,4 +26,5 @@ const string_length = function (string) {
 module.exports = {
   string_length,
   encryptPassword,
+  decryptPassword,
 };
