@@ -1,0 +1,33 @@
+.process-steps-view {
+  position: relative;
+  top: 3rem;
+}
+.steps-heading {
+  margin-left: 3rem;
+  font-size: 1.8rem;
+  margin-top: 3rem;
+}
+.steps-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.step-heading {
+  font-size: 1.5rem;
+  font-family: "Montagu Slab";
+}
+.step-content {
+  font-size: 1.1rem;
+  width: 18rem;
+  font-family: "Montagu Slab";
+  color: #7b7676;
+}
+.step-image {
+  width: 10rem;
+  margin-left: 8rem;
+}
+.step-image-even {
+  width: 10rem;
+  margin-right: 10rem;
+}

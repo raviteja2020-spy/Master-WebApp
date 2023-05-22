@@ -1,0 +1,56 @@
+.nav-desktop-view {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #f0ecf9;
+  align-items: center;
+  height: 10vh;
+  /* position: sticky; */
+  width: 100%;
+  top: 0;
+  overflow: hidden;
+}
+.nav-desktop-link-view {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 40%;
+}
+.desktop-logo-view {
+  position: relative;
+  left: 3rem;
+}
+.desktop-view-logo {
+  width: 6.5rem;
+}
+.nav-desktop-links {
+  font-size: 0.9rem;
+  color: #7b7676;
+  font-family: "Mukta Vaani";
+  text-shadow: 0px 0px 1px #7b7676;
+  font-weight: 500;
+  cursor: pointer;
+}
+.nav-get-started-btn {
+  padding: 0.3rem 1.2rem;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  background-color: #d9d9d9;
+  border-style: none;
+  box-shadow: 0px 2px #7b7676;
+  color: #7b7676;
+  font-family: "Mukta Vaani";
+  text-shadow: 1px 0px 1px #7b7676;
+  cursor: pointer;
+}
+.desktop-login-view {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.login-logo {
+  width: 1rem;
+  height: 1rem;
+  padding-right: 7px;
+}
