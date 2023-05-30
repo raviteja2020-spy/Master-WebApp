@@ -5,7 +5,7 @@ import "./index.css";
 import StepsProcess from "../StepsProcess";
 
 function Home() {
-  const [popUpToggle, setPopUpToggle] = useState(false);
+  //const [popUpToggle, setPopUpToggle] = useState(false);
 
   return (
     <div className="home-container">
@@ -40,7 +40,7 @@ function Home() {
         />
         <h1 className="saraswati-text">Knowledge is divine</h1>
       </div>
-      {popUpToggle && (
+      {/* {popUpToggle && (
         <div className="pop-up-container">
           <div className="pop-up-body">
             <div className="pop-up-header">
@@ -48,7 +48,7 @@ function Home() {
             </div>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 }
