@@ -1,11 +1,14 @@
 import React from "react";
 import "./index.css";
-function Header() {
+
+function Header(props) {
+  const { btnHandler } = props;
+
   return (
     <nav className="nav-desktop-view">
       <div className="desktop-logo-view">
         <img
-          src="https://master-webapp.s3.ap-south-1.amazonaws.com/logo.png"
+          src="https://master-web-application.s3.ap-south-1.amazonaws.com/logo.png"
           className="desktop-view-logo"
           alt="master-logo"
         />
@@ -15,7 +18,7 @@ function Header() {
         <h1 className="nav-desktop-links">Blogs</h1>
         <div className="desktop-login-view">
           <img
-            src="https://master-webapp.s3.ap-south-1.amazonaws.com/user.png"
+            src="https://master-web-application.s3.ap-south-1.amazonaws.com/user.png"
             alt="contact"
             className="login-logo"
           />
@@ -23,7 +26,9 @@ function Header() {
         </div>
 
         <div>
-          <button className="nav-get-started-btn">Get Started</button>
+          <button className="nav-get-started-btn" onClick={btnHandler}>
+            Get Started
+          </button>
         </div>
       </div>
     </nav>
