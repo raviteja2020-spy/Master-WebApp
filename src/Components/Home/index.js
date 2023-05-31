@@ -21,9 +21,10 @@ function Home() {
     const { value } = e.target;
     console.log(value);
   };
-  setSignUpForm();
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    setSignUpForm();
   };
   console.log(signUpFormValues);
   return (
