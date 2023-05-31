@@ -18,9 +18,10 @@ function Home() {
   const [signUpFormValues, setSignUpForm] = useState(initialSignUpValues);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { value } = e.target;
     console.log(value);
   };
+  setSignUpForm();
   const handleSubmit = (e) => {
     e.preventDefault();
   };
