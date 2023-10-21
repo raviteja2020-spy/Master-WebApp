@@ -1,3 +1,6 @@
+.home-container {
+  background-color: rgb(242, 248, 248);
+}
 .desktop-view-landing-page {
   display: flex;
   flex-direction: row;
@@ -5,12 +8,7 @@
   height: 21rem;
   border-bottom-right-radius: 250px;
 }
-@media (max-width: 784px) {
-  .home-container {
-    display: none;
-  }
-  /* Additional styles for medium-sized screens */
-}
+
 .desktop-view-main-quote {
   font-size: 3.2rem;
   color: #9d56c9;
@@ -23,15 +21,16 @@
   color: #7b7676;
   font-family: "Montagu Slab";
   font-weight: 500;
+  margin-top: 1.2rem;
 }
 .desktop-view-home-btn {
   border-style: none;
   background-color: #9d56c9;
   color: #ffffff;
   border-radius: 8px;
-  padding: 1rem 3rem;
+  padding: 0.8rem 2.5rem;
   font-size: 1rem;
-  margin-top: 0px;
+  margin-top: 1.2rem;
   cursor: pointer;
   font-family: "Montagu Slab";
 }
@@ -51,6 +50,15 @@
   height: 400px;
   bottom: 1.5rem;
 }
+@media (min-width: 784px) and (max-width: 992px) {
+  .desktop-view-home-img {
+    width: 300px;
+    position: relative;
+    left: 0rem;
+    height: 350px;
+    bottom: 1.5rem;
+  }
+}
 .saraswati-img-view {
   display: flex;
   flex-direction: column;
@@ -65,6 +73,7 @@
   font-family: monospace;
   color: #7b7676;
 }
+/* Sign Up Pop-Up*/
 .pop-up-container {
   position: fixed;
   top: 0;
@@ -72,7 +81,7 @@
   left: 0;
   right: 0;
   background-color: rgb(0, 0, 0, 0.5);
-  padding-top: 8%;
+  padding-top: 5rem;
 }
 .pop-up-body {
   width: 25rem;
@@ -113,7 +122,9 @@
   border-bottom: 2px solid #9d56c9;
   border-radius: 5px;
   margin-top: 0.3rem;
-  margin-bottom: 1rem;
+}
+.input-box-card {
+  margin-bottom: 0.8rem;
 }
 .user-img {
   fill: #9d56c9;
@@ -127,14 +138,15 @@
   margin-top: 5rem;
 }
 .name-input-field {
-  width: 13rem;
+  width: 15rem;
   height: 1.7rem;
   border: none;
   outline: none;
   background-color: #d9d9d9;
   font-family: "Montagu Slab";
   margin-left: 0.5rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  color: #242424;
 }
 .name-card:focus {
   border: 1px solid transparent;
@@ -147,7 +159,6 @@
 }
 .register-btn {
   width: 18rem;
-
   border: none;
   border-radius: 8px;
   background-color: #9d56c9;
@@ -156,4 +167,58 @@
   font-family: "Montagu Slab";
   padding: 10px 0px;
   cursor: pointer;
+}
+
+/*Login Pop-Up*/
+.login-heading {
+  margin: 0;
+  color: #9d56c9;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+.login-label {
+  font-family: "Montagu Slab";
+  font-size: 0.8rem;
+  color: #7b7676;
+  margin-top: 5rem;
+}
+.login-btn {
+  width: 18rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #9d56c9;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-family: "Montagu Slab";
+  padding: 10px 0px;
+  cursor: pointer;
+  margin-top: 0px;
+}
+.login-name-card {
+  width: 18rem;
+  background-color: #d9d9d9;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #9d56c9;
+  border-radius: 5px;
+  margin-top: 0.8rem;
+  margin-bottom: 1rem;
+}
+.forgot-password {
+  font-size: 0.7rem;
+  text-decoration: underline;
+  color: #7b7676;
+}
+.forgot-password:hover {
+  cursor: pointer;
+  color: #242424;
+}
+.error-text {
+  font-size: 0.7rem;
+  margin-top: 0px;
+  text-align: right;
+  color: red;
 }

@@ -10,9 +10,9 @@ const { tutorTeachs } = require("../controllers/tutorTeaches");
 
 //TUTOR SIGNUP ROUTE
 const tutor_signup = filesupload.fields([
-  { name: "mobile", maxCount: 1 },
+  { name: "name", maxCount: 1 },
+  { name: "email", maxCount: 1 },
   { name: "password", maxCount: 1 },
-  { name: "cpassword", maxCount: 1 },
 ]);
 
 router.post("/sign-up", tutor_signup, signup);

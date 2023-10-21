@@ -5,10 +5,10 @@
   background-color: #f0ecf9;
   align-items: center;
   height: 10vh;
-  /* position: sticky; */
   width: 100%;
   top: 0;
   overflow: hidden;
+  /* position: sticky; */
 }
 .nav-desktop-link-view {
   display: flex;
@@ -50,7 +50,10 @@
   align-items: center;
 }
 .login-logo {
-  width: 1rem;
+  width: 1.4rem;
   height: 1rem;
   padding-right: 7px;
+}
+.desktop-login-view:hover {
+  cursor: pointer;
 }

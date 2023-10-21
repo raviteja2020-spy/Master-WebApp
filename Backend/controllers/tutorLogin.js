@@ -8,29 +8,21 @@ require("dotenv").config();
 //const { uploadS3 } = require("../s3");
 
 const signup = async (req, res, next) => {
-  let { mobile, password, cpassword } = req.body;
-  if (mobile == "" || mobile == null || mobile == undefined) {
+  let { name, email, password } = req.body;
+  if (name == "" || name == null || name == undefined) {
     return res.send({
       status: 200,
       success: false,
       response: false,
-      message: "Enter Mobile Number",
+      message: "Enter your name",
     });
   }
-  if (!validation.isNumeric(mobile)) {
+  if (!validation.emailValidator(email)) {
     return res.send({
       status: 200,
       success: false,
       response: false,
-      message: "Invalid Mobile Number",
-    });
-  }
-  if (utility.string_length(mobile) != 10) {
-    return res.send({
-      status: 200,
-      success: false,
-      response: false,
-      message: "Mobile length should be 10 digits",
+      message: "Invalid Email",
     });
   }
 
@@ -43,35 +35,17 @@ const signup = async (req, res, next) => {
     });
   }
 
-  if (utility.string_length(password) < 6) {
+  if (utility.string_length(password) <= 4) {
     return res.send({
       status: 200,
       success: false,
       response: false,
-      message: "Password length should be 6 digits",
+      message: "Password length should be 5 digits",
     });
   }
 
-  if (cpassword == "" || cpassword == null || cpassword == undefined) {
-    return res.send({
-      status: 200,
-      success: false,
-      response: false,
-      message: "Enter your Confirm Password",
-    });
-  }
-
-  if (password !== cpassword) {
-    return res.send({
-      status: 200,
-      success: false,
-      response: false,
-      message: "Password not matched",
-    });
-  }
-
-  const [errRes, mobileCheck] = await table.commonTable.getRowData("tutor", {
-    mobile: mobile,
+  const [errRes, emailCheck] = await table.commonTable.getRowData("tutor", {
+    email: email,
   });
 
   if (errRes) {
@@ -82,34 +56,35 @@ const signup = async (req, res, next) => {
       message: "Something went wrong please try again.",
     });
   }
-  if (mobileCheck != undefined) {
+  if (emailCheck != undefined) {
     return res.send({
       status: 200,
       success: false,
       response: false,
-      message: "Mobile already registered.",
+      message: "Email already registered.",
     });
   }
-  if (mobileCheck == undefined) {
+  if (emailCheck == undefined) {
     const hashPassword = await utility.encryptPassword(password, 10);
     //const payload = { mobile: mobile };
     //const jwtToken = jwt.sign(payload, process.env.MY_SECRET_TOKEN);
     const registerTutor = [],
       status = 2;
 
-    registerTutor.push(mobile);
+    registerTutor.push(name);
+    registerTutor.push(email);
     registerTutor.push(hashPassword);
     registerTutor.push(status);
     registerTutor.push(new Date());
     registerTutor.push(new Date());
 
     const tutorQuery =
-      "INSERT INTO tutor (mobile,password,status,created_at,updated_at) VALUES(?,?,?,?,?)";
+      "INSERT INTO tutor (name,email,password,status,created_at,updated_at) VALUES(?,?,?,?,?)";
 
     const [errInsert, tutorInsert] = await table.commonTable.insertData(
       tutorQuery,
       registerTutor
-    );
+    ); 
 
     if (errInsert) {
       return res.send({

@@ -2,7 +2,7 @@ import React from "react";
 import "./index.css";
 
 function Header(props) {
-  const { btnHandler } = props;
+  const { btnHandler, loginBtnHandler } = props;
 
   return (
     <nav className="nav-desktop-view">
@@ -16,7 +16,7 @@ function Header(props) {
       <div className="nav-desktop-link-view">
         <h1 className="nav-desktop-links">Our Story</h1>
         <h1 className="nav-desktop-links">Blogs</h1>
-        <div className="desktop-login-view">
+        <div className="desktop-login-view" onClick={loginBtnHandler}>
           <img
             src="https://master-web-application.s3.ap-south-1.amazonaws.com/user.png"
             alt="contact"

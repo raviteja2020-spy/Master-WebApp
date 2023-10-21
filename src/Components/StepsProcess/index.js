@@ -3,7 +3,7 @@ import steps from "./steps";
 import "./index.css";
 const StepsProcess = () => {
   return (
-    <div className="process-steps-view">
+    <section className="process-steps-view">
       <h1 className="steps-heading">Learning is a lifelong process</h1>
       <div className="steps-view">
         <div>
@@ -62,7 +62,7 @@ const StepsProcess = () => {
           <p className="step-content">{steps[3].stepContent}</p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

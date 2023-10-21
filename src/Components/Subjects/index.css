@@ -4,24 +4,35 @@
   justify-content: space-evenly;
 }
 .subject-box {
-  border: 1px solid #d9d9d9;
   display: flex;
   flex-direction: column;
-  width: 13rem;
-  height: 10rem;
   align-items: center;
   justify-content: center;
   position: relative;
+  width: 13rem;
+  height: 10rem;
+  border: 1px solid #d9d9d9;
   top: 1.5rem;
   box-shadow: 0px 2px #7b7676;
   border-radius: 1rem;
 }
+
 .subject-img {
   width: 8rem;
+  height: 5rem;
   margin-top: 1rem;
 }
 .subject-text {
-  font-size: 1.2rem;
+  font-size: 1rem;
+  margin-top: 0.8rem;
   text-align: center;
   color: #7b7676;
+  font-family: "Montagu Slab";
+}
+
+@media (min-width: 784px) and (max-width: 992px) {
+  .subject-box {
+    width: 10rem;
+    height: 10rem;
+  }
 }
